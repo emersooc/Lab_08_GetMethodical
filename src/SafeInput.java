@@ -83,15 +83,15 @@ public class SafeInput
     public static double getRangedDouble(Scanner pipe, String prompt, double low, double high)
     {
         boolean done = false; //boolean to control while loop
-        int retRangedDouble = 0; //sets to zero
+        double retRangedDouble = 0; //sets to zero
 
         do
         {
             System.out.print("\n" +prompt+ ":"); //prompt here
 
-            if (pipe.hasNextInt())
+            if (pipe.hasNextDouble())
             {
-                retRangedDouble = pipe.nextInt();
+                retRangedDouble = pipe.nextDouble();
 
                 if (retRangedDouble >= low && retRangedDouble <= high)
                 {
@@ -102,5 +102,38 @@ public class SafeInput
         while(!done);
 
         return retRangedDouble;
+    }
+
+    public static boolean getYNConfirm(Scanner pipe, String prompt)
+    {
+        boolean done = false; //boolean to control while loop
+        boolean retYNConfirm = false;
+        String YNAnswer = "";
+
+        do
+        {
+            System.out.print("\n" +prompt+ ":"); //prompt here
+
+            if (pipe.hasNextLine())
+            {
+                YNAnswer = pipe.nextLine();
+
+                if (YNAnswer.equalsIgnoreCase("Y"))
+                {
+                    retYNConfirm = true;
+
+                    done = true;
+                }
+                else if (YNAnswer.equalsIgnoreCase("N"))
+                {
+                    retYNConfirm = false;
+
+                    done = true;
+                }
+            }
+        }
+        while(!done);
+
+        return retYNConfirm;
     }
 }
