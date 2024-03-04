@@ -136,4 +136,9 @@ public class SafeInput
 
         return retYNConfirm;
     }
+
+    public static String getRegExString(Scanner pipe, String prompt, String regEx)
+    {
+
+    }
 }
