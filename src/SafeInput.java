@@ -56,8 +56,51 @@ public class SafeInput
         return retDouble;
     }
 
-    public static int getRangedInt(Scanner pipe, String prompt)
+    public static int getRangedInt(Scanner pipe, String prompt, int low, int high)
     {
+        boolean done = false; //boolean to control while loop
+        int retRangedInt = 0; //sets to zero
 
+        do
+        {
+            System.out.print("\n" +prompt+ ":"); //prompt here
+
+            if (pipe.hasNextInt())
+            {
+                retRangedInt = pipe.nextInt();
+
+                if (retRangedInt >= low && retRangedInt <= high)
+                {
+                    done = true;
+                }
+            }
+        }
+        while(!done);
+
+        return retRangedInt;
+    }
+
+    public static double getRangedDouble(Scanner pipe, String prompt, double low, double high)
+    {
+        boolean done = false; //boolean to control while loop
+        int retRangedDouble = 0; //sets to zero
+
+        do
+        {
+            System.out.print("\n" +prompt+ ":"); //prompt here
+
+            if (pipe.hasNextInt())
+            {
+                retRangedDouble = pipe.nextInt();
+
+                if (retRangedDouble >= low && retRangedDouble <= high)
+                {
+                    done = true;
+                }
+            }
+        }
+        while(!done);
+
+        return retRangedDouble;
     }
 }
