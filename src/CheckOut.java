@@ -19,6 +19,6 @@ public class CheckOut
             totalCost = itemCost + totalCost;
         }
 
-        System.out.printf("Your total is $%.2f", totalCost);
+        System.out.printf("Your total is $%.2f", totalCost); //prints total to 2 decimal points
     }
 }
