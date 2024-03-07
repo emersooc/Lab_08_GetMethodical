@@ -126,8 +126,6 @@ public class SafeInput
                 }
                 else if (YNAnswer.equalsIgnoreCase("N"))
                 {
-                    retYNConfirm = false;
-
                     done = true;
                 }
             }
@@ -139,6 +137,22 @@ public class SafeInput
 
     public static String getRegExString(Scanner pipe, String prompt, String regEx)
     {
+        boolean done = false; //boolean to control while loop
+        String retRegExString = ""; //empty string
 
+        do
+        {
+            System.out.print("\n" +prompt+ ":"); //prompt here
+
+            retRegExString = pipe.nextLine(); //sets eventual return string to input
+
+            if (retRegExString.matches(regEx))
+            {
+                done = true; //ends while loop
+            }
+        }
+        while(!done);
+
+        return retRegExString;
     }
 }
