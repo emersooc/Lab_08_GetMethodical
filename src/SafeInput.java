@@ -210,6 +210,6 @@ public class SafeInput
             System.out.print("*");
         }
 
-        return msg;
+        return "\n";
     }
 }
