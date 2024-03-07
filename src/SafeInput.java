@@ -164,15 +164,52 @@ public class SafeInput
         {
             System.out.print("\n" +prompt+ ": "); //prompt here
 
-            retRegExString = pipe.nextLine(); //sets eventual return string to input
+            retRegExString = pipe.next(); //sets eventual return string to input
 
             if (retRegExString.matches(regEx))
             {
                 done = true; //ends while loop
             }
+            else
+            {
+                pipe.nextLine();
+            }
         }
         while(!done);
 
         return retRegExString;
+    }
+
+    public static String prettyHeader(String msg)
+    {
+        int msgLength = msg.length();
+
+        for (int i = 0; i < 60; i++)
+        {
+            System.out.print("*");
+        }
+
+        System.out.println();
+
+        System.out.print("***");
+        for (int i = 0; i <((60/2) - 4) - msgLength / 2; i++)
+        {
+            System.out.print(" ");
+        }
+        System.out.print(msg);
+        for (int i = 0; i <((60/2) - 3) - msgLength / 2; i++)
+        {
+            System.out.print(" ");
+        }
+        System.out.print("***");
+
+        System.out.println();
+
+        for (int i = 0; i < 60; i++)
+        {
+            System.out.print("*");
+        }
+
+        return msg;
     }
 }
