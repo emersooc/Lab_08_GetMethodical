@@ -8,7 +8,7 @@ public class SafeInput
 
         do
         {
-            System.out.print("\n" +prompt+ ":"); //prompt will output here
+            System.out.print("\n" +prompt+ ": "); //prompt will output here
             retString = pipe.nextLine();
         }
         while(retString.length() == 0);
@@ -23,12 +23,16 @@ public class SafeInput
 
         do
         {
-            System.out.print("\n" +prompt+ ":"); //prompt here
+            System.out.print("\n" +prompt+ ": "); //prompt here
 
             if (pipe.hasNextInt())
             {
                 retInt = pipe.nextInt();
                 done = true;
+            }
+            else
+            {
+                pipe.next();
             }
         }
         while(!done);
@@ -39,16 +43,20 @@ public class SafeInput
     public static double getDouble(Scanner pipe, String prompt)
     {
         boolean done = false; //boolean to control while loop
-        int retDouble = 0; //sets to zero
+        double retDouble = 0; //sets to zero
 
         do
         {
-            System.out.print("\n" +prompt+ ":"); //prompt here
+            System.out.print("\n" +prompt+ ": "); //prompt here
 
             if (pipe.hasNextDouble())
             {
-                retDouble = pipe.nextInt();
+                retDouble = pipe.nextDouble();
                 done = true;
+            }
+            else
+            {
+                pipe.next();
             }
         }
         while(!done);
@@ -63,7 +71,7 @@ public class SafeInput
 
         do
         {
-            System.out.print("\n" +prompt+ ":"); //prompt here
+            System.out.print("\n" +prompt+ ": "); //prompt here
 
             if (pipe.hasNextInt())
             {
@@ -87,7 +95,7 @@ public class SafeInput
 
         do
         {
-            System.out.print("\n" +prompt+ ":"); //prompt here
+            System.out.print("\n" +prompt+ ": "); //prompt here
 
             if (pipe.hasNextDouble())
             {
@@ -112,7 +120,7 @@ public class SafeInput
 
         do
         {
-            System.out.print("\n" +prompt+ ":"); //prompt here
+            System.out.print("\n" +prompt+ ": "); //prompt here
 
             if (pipe.hasNextLine())
             {
@@ -142,7 +150,7 @@ public class SafeInput
 
         do
         {
-            System.out.print("\n" +prompt+ ":"); //prompt here
+            System.out.print("\n" +prompt+ ": "); //prompt here
 
             retRegExString = pipe.nextLine(); //sets eventual return string to input
 
