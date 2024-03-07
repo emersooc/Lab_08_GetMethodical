@@ -82,6 +82,10 @@ public class SafeInput
                     done = true;
                 }
             }
+            else
+            {
+                pipe.next();
+            }
         }
         while(!done);
 
