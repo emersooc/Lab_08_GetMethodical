@@ -8,9 +8,9 @@ public class CheckOut
 
         double itemCost;
         double totalCost = 0;
-        boolean answer;
+        boolean answer = true;
 
-        do
+        while(answer)
         {
             itemCost = SafeInput.getRangedDouble(in, "Enter the price of your item", 0.50, 10.00);
 
@@ -18,7 +18,6 @@ public class CheckOut
 
             totalCost = itemCost + totalCost;
         }
-        while(answer);
 
         System.out.printf("Your total is $%.2f", totalCost);
     }

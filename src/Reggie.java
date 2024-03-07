@@ -18,8 +18,22 @@ public class Reggie
 
         System.out.println("Your M-Number is " +mNum);
 
-        menu = SafeInput.getRegExString(in, "Choose a menu option", "^[Open|Save|View|Quit]$");
-
-        System.out.println("You chose " +menu);
+        menu = SafeInput.getRegExString(in, "Choose a menu option", "^[OoSsVvQq]$");
+        if (menu.equalsIgnoreCase("O"))
+        {
+            System.out.println("You chose Open");
+        }
+        else if (menu.equalsIgnoreCase("S"))
+        {
+            System.out.println("You chose Save");
+        }
+        else if (menu.equalsIgnoreCase("V"))
+        {
+            System.out.println("You chose View");
+        }
+        else
+        {
+            System.out.println("You chose Quit");
+        }
     }
 }
