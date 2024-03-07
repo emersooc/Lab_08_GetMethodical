@@ -110,6 +110,10 @@ public class SafeInput
                     done = true;
                 }
             }
+            else
+            {
+                pipe.next();
+            }
         }
         while(!done);
 
@@ -120,7 +124,7 @@ public class SafeInput
     {
         boolean done = false; //boolean to control while loop
         boolean retYNConfirm = false;
-        String YNAnswer = "";
+        String YNAnswer;
 
         do
         {
@@ -141,6 +145,10 @@ public class SafeInput
                     done = true;
                 }
             }
+            else
+            {
+                pipe.next();
+            }
         }
         while(!done);
 
@@ -150,7 +158,7 @@ public class SafeInput
     public static String getRegExString(Scanner pipe, String prompt, String regEx)
     {
         boolean done = false; //boolean to control while loop
-        String retRegExString = ""; //empty string
+        String retRegExString; //undefined string
 
         do
         {
